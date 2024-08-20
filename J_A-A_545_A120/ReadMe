@@ -1,0 +1,246 @@
+J/A+A/545/A120 X-ray bursting neutron star atmos. models. II (Suleimanov+, 2012)
+================================================================================
+X-ray bursting neutron star atmosphere models: spectra and color corrections.
+    Suleimanov V., Poutanen J., Werner K.
+    <Astron. Astrophys. 545, A120 (2012)>
+    =2012A&A...545A.120S        (SIMBAD/NED BibCode)
+================================================================================
+ADC_Keywords: Models, atmosphere ; Binaries, X-ray
+Keywords: radiative transfer - scattering - methods: numerical -
+          stars: atmospheres - stars: neutron - X-rays: stars
+
+Abstract:
+    Theoretical spectra of X-ray bursting neutron star (NS) model
+    atmospheres are widely used for determination of the NS basic
+    parameters such as their masses and radii. Compton scattering, that
+    plays an important role in spectra formation at high luminosities, is
+    often accounted for using the differential Kompaneets operator, while
+    in other models a more general, integral operator for the Compton
+    scattering kernel is used. We construct here accurate NS atmosphere
+    models using exact treatment of Compton scattering with the integral
+    relativistic kinetic equation and exact relativistic angle-dependent
+    redistribution function.
+
+Description:
+    There are 18 sets of models for six chemical composition (pure
+    hydrogen X=1, pure helium Y=1, and four sets of a solar mix of
+    hydrogen and helium X=0.7374 with various heavy element abundances
+    Z=1, 0.3, 0.1, and 0.01Z_{sun}_; Z_{sun}_=0.0134) and three gravities
+    with logg=14.0, 14.3, and 14.6 (g in units cm/s^2^). Each of these 18
+    sets is also characterized by the Eddington temperature at the
+    surface, neutron star radius (computed for the assumed mass
+    =1.4M_{sun}_), and the redshift, as detailed in set.dat file.
+
+    tabled1.dat, for each of the 18 sets there are 26-28 lines of data
+    (for various values of l and corresponding effective temperatures)
+    containing color corrections computed by five different procedures
+    described in Suleimanov et al. (2011, Cat. J/A+A/527/A139). The
+    product of dilution factor and fc^4^ are also given for procedures
+    1-3. They are computed from the flux spectra presented in tabled2.dat.
+    tabled3.dat contains the specific intensities at three angles with
+    cosines equal to 0.113, 0.5 and 0.887.
+
+    For each set, 26-28 models are computed for relative luminosities (in
+    units of Eddnington) l=L/L_Edd = 0.001, 0.003, 0.01, 0.03, 0.05, 0.07,
+    0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85,
+    0.9, 0.95, 0.98, 1.00, 1.02, 1.04, 1.06, 1.08, 1.10.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName      Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe            80        .   This file
+set.dat           49       18   Set parameters
+tabled1.dat       68      484   Color and dilution factors
+tabled2.dat      382     5400  *Atmosphere model spectra (fluxes)
+tabled3.dat     1110     5400  *Atmosphere model spectra (specific intensities)
+--------------------------------------------------------------------------------
+Note on tabled2.dat: fluxes for 484 models of neutron star atmospheres.
+Note on tabled3.dat: specific intensities for the same models.
+--------------------------------------------------------------------------------
+
+See also:
+ J/A+A/527/A139 : X-ray bursting neutron star atmosphere models
+                                                         (Suleimanov+, 2011)
+
+Byte-by-byte Description of file: set.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1-  2  I2    ---     Set       [1/18] Set number
+   4-  9  F6.4  ---     X         X abundance (0, 0.7374, 1)
+  11- 16  F6.4  ---     Y         Y abundance
+                                   (0, 0.2492, 0.2586, 0.2613, 0.2625, 1)
+  18- 24  E7.2  ---     Z         Z abundance
+                                   (0, 1.34E-2, 4.02E-3, 1.34E-3, 1.34E-4)
+  26- 29  F4.1  [cm/s2] logg      Logarithm of surface gravity
+                                   (14.0, 14.3, 14.6)
+  31- 35  F5.3  keV     TEdd      Eddington temperature (9 values)
+  37- 41  F5.2  km      R         Neutron star radius (8.16, 10.88, 14.80)
+  43- 46  F4.2  ---     z         Redshift (0.18, 0.27, 0.42)
+  48- 49  I2    ---     Lum       Number of luminosities for a given set
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: tabled1.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1-  2  I2    ---     Set       [1/18] Set number
+   4-  8  F5.3  ---     l         Relative luminosity L/L_Edd (1)
+  10- 14  F5.3  ---     grad/g    Ratio of the radiation acceleration to gravity
+  16- 20  F5.3  keV     Teff      Effective temperature
+  22- 26  F5.3  ---     fc1       Color correction factor f_c,1_ (2)
+  28- 32  F5.3  ---     fc2       Color correction factor f_c,2_ (2)
+  34- 38  F5.3  ---     fc3       Color correction factor f_c,3_ (2)
+  40- 44  F5.3  ---     fc4       Color correction factor f_c,4_ (2)
+  46- 50  F5.3  ---     fc5       Color correction factor f_c,5_ (2)
+  52- 56  F5.3  ---     w*fc1+4   Product of dilution factor and (fc1)^4^
+  58- 62  F5.3  ---     w*fc2+4   Product of dilution factor and (fc2)^4^
+  64- 68  F5.3  ---     w*fc3+4   Product of dilution factor and (fc3)^4^
+--------------------------------------------------------------------------------
+Note (1): Lum values (26-28) of relative luminosity from 0.001 to 1.06-1.10.
+Note (2): fc=Tbb/Teff, where Tbb is the fitted color temperature.
+           fc1 to fc5 correspond to the different procedures to determine fc.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: tabled2.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units     Label     Explanations
+--------------------------------------------------------------------------------
+   1-  5  I5    ---       Set       Set number
+   9- 18  E10.4 keV       E         Photon energy
+  22- 31  E10.4 mW/m2/keV F(0001)   Flux F_E_ for l=0.001 (1)
+  35- 44  E10.4 mW/m2/keV F(0003)   Flux F_E_ for l=0.003 (1)
+  48- 57  E10.4 mW/m2/keV F(0010)   Flux F_E_ for l=0.01  (1)
+  61- 70  E10.4 mW/m2/keV F(0030)   Flux F_E_ for l=0.03  (1)
+  74- 83  E10.4 mW/m2/keV F(0050)   Flux F_E_ for l=0.05  (1)
+  87- 96  E10.4 mW/m2/keV F(0070)   Flux F_E_ for l=0.07  (1)
+ 100-109  E10.4 mW/m2/keV F(0100)   Flux F_E_ for l=0.1   (1)
+ 113-122  E10.4 mW/m2/keV F(0150)   Flux F_E_ for l=0.15  (1)
+ 126-135  E10.4 mW/m2/keV F(0200)   Flux F_E_ for l=0.2   (1)
+ 139-148  E10.4 mW/m2/keV F(0300)   Flux F_E_ for l=0.3   (1)
+ 152-161  E10.4 mW/m2/keV F(0400)   Flux F_E_ for l=0.4   (1)
+ 165-174  E10.4 mW/m2/keV F(0500)   Flux F_E_ for l=0.5   (1)
+ 178-187  E10.4 mW/m2/keV F(0550)   Flux F_E_ for l=0.55  (1)
+ 191-200  E10.4 mW/m2/keV F(0600)   Flux F_E_ for l=0.6   (1)
+ 204-213  E10.4 mW/m2/keV F(0650)   Flux F_E_ for l=0.65  (1)
+ 217-226  E10.4 mW/m2/keV F(0700)   Flux F_E_ for l=0.7   (1)
+ 230-239  E10.4 mW/m2/keV F(0750)   Flux F_E_ for l=0.75  (1)
+ 243-252  E10.4 mW/m2/keV F(0800)   Flux F_E_ for l=0.8   (1)
+ 256-265  E10.4 mW/m2/keV F(0850)   Flux F_E_ for l=0.85  (1)
+ 269-278  E10.4 mW/m2/keV F(0900)   Flux F_E_ for l=0.9   (1)
+ 282-291  E10.4 mW/m2/keV F(0950)   Flux F_E_ for l=0.95  (1)
+ 295-304  E10.4 mW/m2/keV F(0980)   Flux F_E_ for l=0.98  (1)
+ 308-317  E10.4 mW/m2/keV F(1000)   Flux F_E_ for l=1.0   (1)
+ 321-330  E10.4 mW/m2/keV F(1020)   Flux F_E_ for l=1.02  (1)
+ 334-343  E10.4 mW/m2/keV F(1040)   Flux F_E_ for l=1.04  (1)
+ 347-356  E10.4 mW/m2/keV F(1060)   Flux F_E_ for l=1.06  (1)
+ 360-369  E10.4 mW/m2/keV F(1080)   ? Flux F_E_ for l=1.08  (1)
+ 373-382  E10.4 mW/m2/keV F(1100)   ? Flux F_E_ for l=1.10  (1)
+--------------------------------------------------------------------------------
+Note (1): Values of the flux F_E_ in units [erg/cm^2^/s/keV] such as
+           {int}_0^infinity^F_E_dE={sigma}_SB_*(T_eff_)^4^.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: tabled3.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units        Label         Explanations
+--------------------------------------------------------------------------------
+   1-   5 I5    ---          Set           Set number
+   9-  18 E10.4 keV          E             Photon energy
+  22-  31 E10.4 mW/m2/keV/sr I(0001,0.113) I_E_i at cosi=0.113 for l=0.001 (1)
+  35-  44 E10.4 mW/m2/keV/sr I(0001,0.5)   I_E_i at cosi=0.5   for l=0.001 (1)
+  48-  57 E10.4 mW/m2/keV/sr I(0001,0.887) I_E_i at cosi=0.887 for l=0.001 (1)
+  61-  70 E10.4 mW/m2/keV/sr I(0003,0.113) I_E_i at cosi=0.113 for l=0.003 (1)
+  74-  83 E10.4 mW/m2/keV/sr I(0003,0.5)   I_E_i at cosi=0.5   for l=0.003 (1)
+  87-  96 E10.4 mW/m2/keV/sr I(0003,0.887) I_E_i at cosi=0.887 for l=0.003 (1)
+ 100- 109 E10.4 mW/m2/keV/sr I(0010,0.113) I_E_i at cosi=0.113 for l=0.01  (1)
+ 113- 122 E10.4 mW/m2/keV/sr I(0010,0.5)   I_E_i at cosi=0.5   for l=0.01  (1)
+ 126- 135 E10.4 mW/m2/keV/sr I(0010,0.887) I_E_i at cosi=0.887 for l=0.01  (1)
+ 139- 148 E10.4 mW/m2/keV/sr I(0030,0.113) I_E_i at cosi=0.113 for l=0.03  (1)
+ 152- 161 E10.4 mW/m2/keV/sr I(0030,0.5)   I_E_i at cosi=0.5   for l=0.03  (1)
+ 165- 174 E10.4 mW/m2/keV/sr I(0030,0.887) I_E_i at cosi=0.887 for l=0.03  (1)
+ 178- 187 E10.4 mW/m2/keV/sr I(0050,0.113) I_E_i at cosi=0.113 for l=0.05  (1)
+ 191- 200 E10.4 mW/m2/keV/sr I(0050,0.5)   I_E_i at cosi=0.5   for l=0.05  (1)
+ 204- 213 E10.4 mW/m2/keV/sr I(0050,0.887) I_E_i at cosi=0.887 for l=0.05  (1)
+ 217- 226 E10.4 mW/m2/keV/sr I(0070,0.113) I_E_i at cosi=0.113 for l=0.07  (1)
+ 230- 239 E10.4 mW/m2/keV/sr I(0070,0.5)   I_E_i at cosi=0.5   for l=0.07  (1)
+ 243- 252 E10.4 mW/m2/keV/sr I(0070,0.887) I_E_i at cosi=0.887 for l=0.07  (1)
+ 256- 265 E10.4 mW/m2/keV/sr I(0100,0.113) I_E_i at cosi=0.113 for l=0.1   (1)
+ 269- 278 E10.4 mW/m2/keV/sr I(0100,0.5)   I_E_i at cosi=0.5   for l=0.1   (1)
+ 282- 291 E10.4 mW/m2/keV/sr I(0100,0.887) I_E_i at cosi=0.887 for l=0.1   (1)
+ 295- 304 E10.4 mW/m2/keV/sr I(0150,0.113) I_E_i at cosi=0.113 for l=0.15  (1)
+ 308- 317 E10.4 mW/m2/keV/sr I(0150,0.5)   I_E_i at cosi=0.5   for l=0.15  (1)
+ 321- 330 E10.4 mW/m2/keV/sr I(0150,0.887) I_E_i at cosi=0.887 for l=0.15  (1)
+ 334- 343 E10.4 mW/m2/keV/sr I(0200,0.113) I_E_i at cosi=0.113 for l=0.2   (1)
+ 347- 356 E10.4 mW/m2/keV/sr I(0200,0.5)   I_E_i at cosi=0.5   for l=0.2   (1)
+ 360- 369 E10.4 mW/m2/keV/sr I(0200,0.887) I_E_i at cosi=0.887 for l=0.2   (1)
+ 373- 382 E10.4 mW/m2/keV/sr I(0300,0.113) I_E_i at cosi=0.113 for l=0.3   (1)
+ 386- 395 E10.4 mW/m2/keV/sr I(0300,0.5)   I_E_i at cosi=0.5   for l=0.3   (1)
+ 399- 408 E10.4 mW/m2/keV/sr I(0300,0.887) I_E_i at cosi=0.887 for l=0.3   (1)
+ 412- 421 E10.4 mW/m2/keV/sr I(0400,0.113) I_E_i at cosi=0.113 for l=0.4   (1)
+ 425- 434 E10.4 mW/m2/keV/sr I(0400,0.5)   I_E_i at cosi=0.5   for l=0.4   (1)
+ 438- 447 E10.4 mW/m2/keV/sr I(0400,0.887) I_E_i at cosi=0.887 for l=0.4   (1)
+ 451- 460 E10.4 mW/m2/keV/sr I(0500,0.113) I_E_i at cosi=0.113 for l=0.5   (1)
+ 464- 473 E10.4 mW/m2/keV/sr I(0500,0.5)   I_E_i at cosi=0.5   for l=0.5   (1)
+ 477- 486 E10.4 mW/m2/keV/sr I(0500,0.887) I_E_i at cosi=0.887 for l=0.5   (1)
+ 490- 499 E10.4 mW/m2/keV/sr I(0550,0.113) I_E_i at cosi=0.113 for l=0.55  (1)
+ 503- 512 E10.4 mW/m2/keV/sr I(0550,0.5)   I_E_i at cosi=0.5   for l=0.55  (1)
+ 516- 525 E10.4 mW/m2/keV/sr I(0550,0.887) I_E_i at cosi=0.887 for l=0.55  (1)
+ 529- 538 E10.4 mW/m2/keV/sr I(0600,0.113) I_E_i at cosi=0.113 for l=0.6   (1)
+ 542- 551 E10.4 mW/m2/keV/sr I(0600,0.5)   I_E_i at cosi=0.5   for l=0.6   (1)
+ 555- 564 E10.4 mW/m2/keV/sr I(0600,0.887) I_E_i at cosi=0.887 for l=0.6   (1)
+ 568- 577 E10.4 mW/m2/keV/sr I(0650,0.113) I_E_i at cosi=0.113 for l=0.65  (1)
+ 581- 590 E10.4 mW/m2/keV/sr I(0650,0.5)   I_E_i at cosi=0.5   for l=0.65  (1)
+ 594- 603 E10.4 mW/m2/keV/sr I(0650,0.887) I_E_i at cosi=0.887 for l=0.65  (1)
+ 607- 616 E10.4 mW/m2/keV/sr I(0700,0.113) I_E_i at cosi=0.113 for l=0.7   (1)
+ 620- 629 E10.4 mW/m2/keV/sr I(0700,0.5)   I_E_i at cosi=0.5   for l=0.7   (1)
+ 633- 642 E10.4 mW/m2/keV/sr I(0700,0.887) I_E_i at cosi=0.887 for l=0.7   (1)
+ 646- 655 E10.4 mW/m2/keV/sr I(0750,0.113) I_E_i at cosi=0.113 for l=0.75  (1)
+ 659- 668 E10.4 mW/m2/keV/sr I(0750,0.5)   I_E_i at cosi=0.5   for l=0.75  (1)
+ 672- 681 E10.4 mW/m2/keV/sr I(0750,0.887) I_E_i at cosi=0.887 for l=0.75  (1)
+ 685- 694 E10.4 mW/m2/keV/sr I(0800,0.113) I_E_i at cosi=0.113 for l=0.8   (1)
+ 698- 707 E10.4 mW/m2/keV/sr I(0800,0.5)   I_E_i at cosi=0.5   for l=0.8   (1)
+ 711- 720 E10.4 mW/m2/keV/sr I(0800,0.887) I_E_i at cosi=0.887 for l=0.8   (1)
+ 724- 733 E10.4 mW/m2/keV/sr I(0850,0.113) I_E_i at cosi=0.113 for l=0.85  (1)
+ 737- 746 E10.4 mW/m2/keV/sr I(0850,0.5)   I_E_i at cosi=0.5   for l=0.85  (1)
+ 750- 759 E10.4 mW/m2/keV/sr I(0850,0.887) I_E_i at cosi=0.887 for l=0.85  (1)
+ 763- 772 E10.4 mW/m2/keV/sr I(0900,0.113) I_E_i at cosi=0.113 for l=0.9   (1)
+ 776- 785 E10.4 mW/m2/keV/sr I(0900,0.5)   I_E_i at cosi=0.5   for l=0.9   (1)
+ 789- 798 E10.4 mW/m2/keV/sr I(0900,0.887) I_E_i at cosi=0.887 for l=0.9   (1)
+ 802- 811 E10.4 mW/m2/keV/sr I(0950,0.113) I_E_i at cosi=0.113 for l=0.95  (1)
+ 815- 824 E10.4 mW/m2/keV/sr I(0950,0.5)   I_E_i at cosi=0.5   for l=0.95  (1)
+ 828- 837 E10.4 mW/m2/keV/sr I(0950,0.887) I_E_i at cosi=0.887 for l=0.95  (1)
+ 841- 850 E10.4 mW/m2/keV/sr I(0980,0.113) I_E_i at cosi=0.113 for l=0.98  (1)
+ 854- 863 E10.4 mW/m2/keV/sr I(0980,0.5)   I_E_i at cosi=0.5   for l=0.98  (1)
+ 867- 876 E10.4 mW/m2/keV/sr I(0980,0.887) I_E_i at cosi=0.887 for l=0.98  (1)
+ 880- 889 E10.4 mW/m2/keV/sr I(1000,0.113) I_E_i at cosi=0.113 for l=1.0   (1)
+ 893- 902 E10.4 mW/m2/keV/sr I(1000,0.5)   I_E_i at cosi=0.5   for l=1.0   (1)
+ 906- 915 E10.4 mW/m2/keV/sr I(1000,0.887) I_E_i at cosi=0.887 for l=1.0   (1)
+ 919- 928 E10.4 mW/m2/keV/sr I(1020,0.113) I_E_i at cosi=0.113 for l=1.02  (1)
+ 932- 941 E10.4 mW/m2/keV/sr I(1020,0.5)   I_E_i at cosi=0.5   for l=1.02  (1)
+ 945- 954 E10.4 mW/m2/keV/sr I(1020,0.887) I_E_i at cosi=0.887 for l=1.02  (1)
+ 958- 967 E10.4 mW/m2/keV/sr I(1040,0.113) I_E_i at cosi=0.113 for l=1.04  (1)
+ 971- 980 E10.4 mW/m2/keV/sr I(1040,0.5)   I_E_i at cosi=0.5   for l=1.04  (1)
+ 984- 993 E10.4 mW/m2/keV/sr I(1040,0.887) I_E_i at cosi=0.887 for l=1.04  (1)
+ 997-1006 E10.4 mW/m2/keV/sr I(1060,0.113) I_E_i at cosi=0.113 for l=1.06  (1)
+1010-1019 E10.4 mW/m2/keV/sr I(1060,0.5)   I_E_i at cosi=0.5   for l=1.06  (1)
+1023-1032 E10.4 mW/m2/keV/sr I(1060,0.887) I_E_i at cosi=0.887 for l=1.06  (1)
+1036-1045 E10.4 mW/m2/keV/sr I(1080,0.113) ? I_E_i at cosi=0.113 for l=1.08  (1)
+1049-1058 E10.4 mW/m2/keV/sr I(1080,0.5)   ? I_E_i at cosi=0.5   for l=1.08  (1)
+1062-1071 E10.4 mW/m2/keV/sr I(1080,0.887) ? I_E_i at cosi=0.887 for l=1.08  (1)
+1075-1084 E10.4 mW/m2/keV/sr I(1100,0.113) ? I_E_i at cosi=0.113 for l=1.1   (1)
+1088-1097 E10.4 mW/m2/keV/sr I(1100,0.5)   ? I_E_i at cosi=0.5   for l=1.1   (1)
+1101-1110 E10.4 mW/m2/keV/sr I(1100,0.887) ? I_E_i at cosi=0.887 for l=1.1   (1)
+--------------------------------------------------------------------------------
+Note (1): Values of the specific intensity I_E_i in units [erg/cm^2^/s/keV/sr ]
+    such as
+    2*pi*{int}_0^infinity^dE{int}_0^1^I_E_i dcosi={sigma}_SB_*(T_eff_)^4^.
+--------------------------------------------------------------------------------
+
+Acknowledgements:
+   J. Poutanen, juri.poutanen(at)oulu.fi, University of Oulu
+   V. Suleimanov, valery.suleimanov(at)uni-tuebingen.de,  University of Tubingen
+
+================================================================================
+(End) V. Suleimanov [Tubingen], J. Poutanen [Oulu], P. Vannier [CDS] 11-Aug-2012

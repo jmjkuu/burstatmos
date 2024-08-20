@@ -1,0 +1,6 @@
+burstatmos   5     0.1       100.           burstatmos  add  0 0
+g_rad/g     " "     0.4    0.    0.1    0.98   1.       0.05
+composition " "     0.7    0.    0.     1.     1.       0.05
+mass        solar   1.4    1.    1.     2.2    2.2      0.1
+radius      km      10.0   7.    7.     15.    20.      0.1
+distance    kpc     6.     1.    3.     12.    20.      0.5         
